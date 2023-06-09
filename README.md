@@ -2,26 +2,19 @@
 
 # Apology:
 
-We have opened a Piazza post to the TAs about this before(TA Sophia Sun should have replied to us). Though we have a best public score of 563.27999, this is done by utilizing online models with a partial polyline feature that doesn't originally exist in public_test.csv(same for a kaggle submission with a score of 673.58312). We are going to submit predictions with score of 679.87822 in the end.
+We have opened a Piazza post to the TAs about this before(TA Sophia Sun should have replied to us). Though we have a best public score of 563.27999, this is done by utilizing online models with a partial polyline feature that doesn't originally exist in public_test.csv. We are going to submit predictions with score of 663 and 679.87822 in the end.
 
 
 ## Instruction on how to load the model
 
-Unfortunately, for the LSTM model, though we saved our model states, everytime we reload the model states, the predict output is different. (We really don't know why). We used 
+We just realized on Friday 6/9, just before the submission deadline that we didn't write 
 
 ```
-PATH = 'xxx.pth'
-torch.save('xxx.pth')
-model.load_state_dict(torch.load(PATH))
+model.eval()
 ```
 
-However, when we re-initialize the model and load the saved model states, everytime the prediction output produced is different.(but the scores are similar around 681-688).
+in prediction, this makes our previous prediction submissions using dropouts. Right now our prediction submissions have been fully used up: this means that our uploaded submissions were irreproducible. Though I have fixed the Load Model.ipynb file for you to load the model and check submission, the prediction you got should be different from our submission and should be better than our submission as it has turned off dropout. 
 
-
-For the MLP model, we have rerun the model to tune parameters (with worse score) and the model states are overwritten, and we are unable to retrieve them. Therefore, for the MLP, we have trained the model again and picked the model state at the same epoch. The output produced will be different, but you should get some idea of what we are working.
+We apologize for that, but it is also frustrating for us because we realized that we could have gotten far better score without this foolish mistake.
 
 We have provided a file Load Model.ipynb, by running it you should get a prediction file(though different from what we submitted).
-
-## To partially prove we got what we submitted:
-
-In Code folder, in Embedding_MLP_model.ipynb and Embedding_MLP_LSTM_model.ipynb, there is a print statement that prints the first 50 lines or the entire prediction, which should be the same with the first 50 rows of Embedding_MLP_moreunit_89.csv and Embedding_MLP_188_retrain.csv we submitted on kaggle, which have public scores of 679.87822 and 681.97093.
