@@ -2,7 +2,7 @@
 
 # Apology:
 
-We have opened a Piazza post to the TAs about this before(TA Sophia Sun should have replied to us). Though we have a best public score of 563.27999, this is done by utilizing online models with a partial polyline feature that doesn't originally exist in public_test.csv. We are going to submit predictions with score of 663 and 679.87822 in the end.
+We have opened a Piazza post to the TAs about this before(TA Sophia Sun should have replied to us). Though we have a best public score of 563.27999, this is done by utilizing online models with a partial polyline feature that doesn't originally exist in public_test.csv. We are going to submit predictions with score of 664 and 679.87822 in the end.
 
 
 ## Instruction on how to load the model
